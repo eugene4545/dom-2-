@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Odera</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"/> 
+    
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <strong>
+                <div class="logo">
+                <img src="./logo/LogoSample_ByTailorBrands-fotor-bg-remover-20230829195450.svg" alt="">
+                </div>
+            </strong>
+        </div>
+
+        <div class="navbar-container">
+
+            <div class="topnav">
+                <a href="#">Home</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+            </div>
+            <!-- icons -->
+            <div class="cart-info" id="cart-info">
+                <span class="cart-info-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </span>
+                <p><span id="item-count">0</span>items</p>
+            </div>
+            <!-- cart section -->
+            <section>
+                <div class="cart" id="cart">
+                    <h1 class="section-header">CART</h1>
+                    <div class="cart-row">
+                        <span class="cart-item cart-header cart-column">ITEM</span>
+                        <span class="cart-price cart-header cart-column">PRICE</span>
+                        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+                    </div>
+
+                    <div class="cart-items">
+                    </div>
+                    <div class="cart-total">
+                        <strong class="cart-total-title">
+                            TOTAL
+                        </strong>
+                        <span class="cart-total-price">$0</span>
+                    </div>
+
+                    <button class="btn btn-primary btn-purchase" type="button">
+                        PURCHASE
+                    </button>
+                </div>
+            </section>
+        </div>
+        <script src="./cart.js" async></script>
+    </header>
+
+    <div class="main-container">
+        <div class="title">flying off the <span>shelf</span></div>
+    </div>
+
+    <div id="filterButtons">
+        <button class="btn active" onclick="filterSelection('all')">All</button>
+        <button class="btn" onclick="filterSelection('ash')">ash</button>
+        <button class="btn" onclick="filterSelection('nike')">Nike</button>
+        <button class="btn" onclick="filterSelection('v-tops')">V-tops</button>
+        <button class="btn" onclick="filterSelection('warmers')">Warmers</button>
+    </div>
+
+    <section class="container">
+        <div class="products">
+            <div class="product ash">
+            <img src="./image-ptl/products-image/img-1.jpeg" class="product_image">
+            <h5 class="product_title">ash coat</h5>
+            Brown Winter Coat
+            <div class="shop-item-details">
+                <h3 class="product_price">$38</h3>
+                <i class="fa-solid fa-heart heart-icon"></i>
+                <button class="btn btn-primary ADD-TO-CART">Add to cart</button>
+            </div>
+            </div>
+
+    <div class="product nike">
+                <img src="./image-ptl/products-image/img-2.jpeg" class="product_image">
+                <h5 class="product_title">shoes (white)</h5>
+                Nike(WHITE) Tennis Shoes
+                <div class="shop-item-details">
+                    <h3 class="product_price">$48</h3>
+                    <i class="fa-solid fa-heart heart-icon"></i>
+                    <button class="btn btn-primary ADD-TO-CART">Add to cart</button>
+                </div>
+
+
+
+
+        </div>
+
+        <div class="product warmers">
+            <img src="./image-ptl/products-image/img-3.jpeg" class="product_image">
+            <h5 class="product_title">Grey Warmers</h5>
+            M&k Warmers (Grey)
+            <div class="shop-item-details">
+                <h3 class="product_price">$48</h3>
+                <i class="fa-solid fa-heart heart-icon"></i>
+                <button class="btn btn-primary ADD-TO-CART">Add to cart</button>
+            </div>
+
+        </div>
+        
+
+        <div class="product nike">
+            <img src="./image-ptl/products-image/img-4.png" class="product_image">
+            <h5 class="product_title">ht shoe</h5>
+            Nike(BLACK&WHITE) Tennis Shoes
+            <div class="shop-item-details">
+                <h3 class="product_price">$48</h3>
+                <i class="fa-solid fa-heart heart-icon"></i>
+                <button class="btn btn-primary ADD-TO-CART">Add to cart</button>
+            </div>
+
+        </div>
+
+        <div class="product v-tops">
+            <img src="./image-ptl/products-image/img-5.jpeg" class="product_image">
+            <h5 class="product_title">V-tops Gown</h5>
+            BROWN
+            <div class="shop-item-details">
+                <h3 class="product_price">$48</h3>
+                <i class="fa-solid fa-heart heart-icon"></i>
+                <button class="btn btn-primary ADD-TO-CART">Add to cart</button>
+            </div>
+
+        </div>
+
+        <div class="product warmers">
+            <img src="./image-ptl/products-image/img-6.jpeg" class="product_image">
+            <h5 class="product_title">Warmers</h5>
+            BEIGE
+            <div class="shop-item-details">
+                <h3 class="product_price">$48</h3>
+                <i class="fa-solid fa-heart heart-icon"></i>
+                <button class="btn btn-primary ADD-TO-CART">Add to cart</button>
+            </div>
+
+        </div>
+
+            </div>
+
+
+
+    </section>
+
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x=document.getElementsByClassName("product");
+            if(c == "all") c = "";
+            for(i = 0; i < x.length; i++){
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1)
+                w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split("");
+            arr2 = name.split(" ");
+            for(i =0; i < arr2.length; i++){
+                if(arr1.indexOf(arr2[i]) == -1){
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        function w3RemoveClass(element, name){
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i =0; i <arr2.length; i++){
+                while (arr1.indexOf(arr2[i]) > -1){
+                    arr1.splice(arr1.indexOf(arr2[i]), 1)
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        var btnContainer = document.getElementById("filterButtons");
+        var btns = btnContainer.getElementsByClassName("btn");
+
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function (){
+                var current = document.getElementsByClassName("active");
+                current[0].className = current [0].className.replace(" active", " ");
+                this.className += " active";
+            }); 
+        }
+
+        // Get all heart icons
+const heartIcons = document.querySelectorAll(".heart-icon");
+
+// Add a click event listener to each heart icon
+heartIcons.forEach((heartIcon) => {
+    heartIcon.addEventListener("click", function () {
+        // Toggle the 'red' class to change the color
+        heartIcon.classList.toggle("red");
+    });
+});
+
+    </script>
+</body>
+</html>
