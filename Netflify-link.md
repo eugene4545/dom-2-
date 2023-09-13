@@ -1,1 +1,0 @@
-projectodera.netlify.app
